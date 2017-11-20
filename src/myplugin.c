@@ -120,7 +120,7 @@ static char *_get_display_value ( const Mode *sw, unsigned int selected_line, G_
  *
  * @param returns try when a match.
  */
-static int myplugin_token_match ( const Mode *sw, GRegex **tokens, unsigned int index )
+static int myplugin_token_match ( const Mode *sw, rofi_int_matcher **tokens, unsigned int index )
 {
     MYPLUGINModePrivateData *pd = (MYPLUGINModePrivateData *) mode_get_private_data ( sw );
 
