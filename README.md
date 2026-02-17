@@ -23,10 +23,6 @@ Run rofi like:
 **Rofi-plugin-template** uses autotools as build system. If installing from git, the following steps should install it:
 
 ```bash
-$ autoreconf -i
-$ mkdir build
-$ cd build/
-$ ../configure
-$ make
-$ make install
+meson setup build
+meson install -C build
 ```
