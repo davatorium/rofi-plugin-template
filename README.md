@@ -2,27 +2,20 @@
 
 Template for creating rofi plugins.
 
-To run this you need an up to date checkout of rofi git installed.
-
-Run rofi like:
+Run rofi like this:
 
 ```bash
-    rofi -show myplugin -modi myplugin 
+rofi -show myplugin -modi myplugin
 ```
 
 ## Compilation
 
-### Dependencies
-
-| Dependency | Version         |
-|------------|-----------------|
-| rofi 	     | 1.4 (or git)	   |
-
 ### Installation
 
-**Rofi-plugin-template** uses autotools as build system. If installing from git, the following steps should install it:
+**Rofi-plugin-template** uses meson as the build system:
 
 ```bash
 meson setup build
+#meson compile -C build
 meson install -C build
 ```
