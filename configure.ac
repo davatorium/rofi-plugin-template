@@ -1,6 +1,6 @@
-AC_INIT([rofi-plugin-template], [0.0.1], [https://my-neat-plugin.org//],[],[https://support.my-neat-plugin.org/])
+AC_INIT([rofi-plugin-template],[0.0.1],[https://my-neat-plugin.org/],[],[https://support.my-neat-plugin.org/])
 
-AC_CONFIG_HEADER([config.h])
+AC_CONFIG_HEADERS([config.h])
 
 
 AC_CONFIG_MACRO_DIRS([m4])
@@ -15,11 +15,6 @@ dnl ---------------------------------------------------------------------
 dnl  Check for compiler
 dnl ---------------------------------------------------------------------
 AC_PROG_CC([clang gcc cc])
-
-dnl ---------------------------------------------------------------------
-dnl  C99 standard
-dnl ---------------------------------------------------------------------
-AC_PROG_CC_C99
 
 dnl ---------------------------------------------------------------------
 dnl C to Object rules.
