@@ -36,18 +36,22 @@ dnl Base CFLAGS
 dnl ---------------------------------------------------------------------
 AM_CFLAGS="-Wall -Wextra -Wparentheses -Winline -pedantic  -Wunreachable-code"
 
-
 dnl ---------------------------------------------------------------------
 dnl Check dependencies
 dnl ---------------------------------------------------------------------
 PKG_PROG_PKG_CONFIG
-
 
 dnl ---------------------------------------------------------------------
 dnl PKG_CONFIG based dependencies  
 dnl ---------------------------------------------------------------------
 PKG_CHECK_MODULES([glib],     [glib-2.0 >= 2.40 gio-unix-2.0 gmodule-2.0 ])
 PKG_CHECK_MODULES([rofi],     [rofi])
+
+dnl ---------------------------------------------------------------------
+dnl Get rofi plugin directory from pkg-config
+dnl ---------------------------------------------------------------------
+ROFI_PLUGINS_DIR=`$PKG_CONFIG --variable=pluginsdir rofi`
+AC_SUBST([ROFI_PLUGINS_DIR])
 
 LT_INIT([disable-static])
 
@@ -56,5 +60,5 @@ dnl Add extra compiler flags
 dnl ---------------------------------------------------------------------
 AC_SUBST([AM_CFLAGS])
 
-AC_CONFIG_FILES([Makefile ])
+AC_CONFIG_FILES([Makefile])
 AC_OUTPUT
